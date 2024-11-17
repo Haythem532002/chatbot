@@ -1,34 +1,22 @@
 package haythem.chatbot;
 
-import org.springframework.beans.factory.annotation.*;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.client.RestTemplate;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequiredArgsConstructor
 public class ChatController {
-    @Qualifier("openaiRestTemplate")
-    @Autowired
-    private RestTemplate restTemplate;
 
-    @Value("${spring.ai.openai.model}")
-    private String model;
 
-    @Value("${spring.ai.openai.api.url}")
-    private String apiUrl;
+    private final ChatService chatService;
 
-    @PostMapping("/chat")
-    public String chat(@RequestBody String prompt) {
-        // create a request
-        ChatRequest request = new ChatRequest(model, prompt);
-
-        // call the API
-        ChatResponse response = restTemplate.postForObject(apiUrl, request, ChatResponse.class);
-
-        if (response == null || response.getChoices() == null || response.getChoices().isEmpty()) {
-            return "No response";
-        }
-
-        // return the first response
-        return response.getChoices().get(0).getMessage().getContent();
+    @GetMapping("/chatbot")
+    public ResponseEntity<String> chat(@RequestParam String message) {
+        String response = chatService.sendMessageToChatbot(message);
+        return ResponseEntity.ok(response);
     }
 }
+
