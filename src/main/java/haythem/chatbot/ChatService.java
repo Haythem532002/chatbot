@@ -25,7 +25,7 @@ public class ChatService {
 
         HttpHeaders headers = new HttpHeaders();
         headers.set("Content-Type", "application/json; charset=utf-8");
-        headers.set("Authorization", "Bearer ya29.a0AeDClZDjda7rsdLuKXvLZljQY7i4W-QVljHMm6xbJ1QZHijiSJXgqAFuPrVmX8vMGIio0E_KxHuoLvhRsqNL8LmGathL1apoK3EDs4H6EUAHBb6bovruJ7cLZ_g5HyMFJ9TLQTlMV-xSyiQg24bhP46pQ9wzsEeai8Aw2_GOcBdpaJ9QWotWXilQaYE1xQwofn08-47-PNpvms_ZBITSOBknkrNkDSSR96B1qtfbhJjxfCIq5wpy7hjCeZKEqJiNGkAA563IuyTwRbwUh_kjD1I4iiUZeeJrLGiT_nTrFJ_RBxOuhDq-TDVbNJVV6sR8PEv2uxf9_UkUpm6DNLAWRI0xt-cuMUz42bKKqPWZoVhdS2H68MWu7Vqs-KwobwoNB-He-juV7vK0Hi1GZWxcqvQZ4M71Z_Ut-jp5QM6lTuOsKQaCgYKAVgSARASFQHGX2MiH587BG1wBgiQj8-pqlyP2Q0437");
+        headers.set("Authorization", "Bearer ya29.a0AeDClZB7IN-j943N1F2ZJfDthLjjjia091ZjyHKZ-t1DZxrZsq4oaGWUt2g-f9i2Cj-bIPJ7JM9iHT1EzgcpSjQwWW4TkFkKIz4SskLxJLVXR_GC1mjgyQqfq2aPuwoE-UPUrAt_C1lJt7sAUa5fpANuDfUJzanRq5mf7swRf7Owl3fZrkQT7tU0ynnQl8KJGk-BIv-FjU7zCH2mclydB6v84dls-QZTy4XxkIaAPYGlW0nU4KlNItcHLES2SJapFGDAAvlOpAIaZ0mF8GRhZnMYLfLIkiZb8AoWyXk0hfoXG3AJ6zcIRfmGMuJmJ29_cK39HXU6x1q42EldFdpzwYBgBaBvsOdNps63wUqteX5whxK2Rn0p5IkEI7b5JO8_AH1L0nQyaWzzcN3EvliCFNDW04gjbjFFgw9ZpyQh3d-mqAaCgYKASwSARASFQHGX2MiKcjQhoSmAgvP7kvbq-k0yw0437");
 
         Map<String, String> textContent = new HashMap<>();
         textContent.put("text", message);
